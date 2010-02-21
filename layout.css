@@ -8,6 +8,8 @@
 /* -------------- top row --------------- */
 div.dokuwiki .header {
   padding: 3px 0 0 2px;
+  background: transparent url(images/header_bg.jpg) no-repeat;
+  background-position: right;
 }
 
 div.dokuwiki .pagename {
@@ -26,17 +28,16 @@ div.dokuwiki .pagename a {
 
 div.dokuwiki .logo {
   float: right;
-  font-size: 220%;
-  font-weight: bolder;
+  font-size: 11px;
   text-align: right;
   vertical-align: middle;
+  color: __white__;
+  padding-right: 20px;
 }
 
 div.dokuwiki .logo a {
-  color: __background_alt__ !important;
+  color: __white__ !important;
   text-decoration: none !important;
-  font-variant: small-caps;
-  letter-spacing: 2pt;
 }
 
 /* ---------------  top and bottom bar ---------------- */
@@ -46,6 +47,7 @@ div.dokuwiki .bar {
   background: __background_alt__;
   padding: 0.1em 0.15em;
   clear: both;
+  background: url(images/toolbar_bg.gif) repeat-x;
 }
 
 div.dokuwiki .bar-left {
@@ -58,7 +60,7 @@ div.dokuwiki .bar-right {
 }
 
 div.dokuwiki #bar__bottom {
-  margin-bottom: 3px;
+  margin-bottom:3px;
 }
 
 /* ------------- File Metadata ----------------------- */

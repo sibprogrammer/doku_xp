@@ -10,7 +10,7 @@
 * { padding: 0; margin: 0; }
 
 body {
-  font: 80% "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
+  font: 80% Tahoma, Arial, sans-serif;
   background-color: __background__;
   color: __text__;
 }
@@ -101,9 +101,10 @@ html>body div.dokuwiki textarea.edit {
 
 div.dokuwiki input.edit,
 div.dokuwiki select.edit {
-  font-size: 100%;
-  border: 1px solid __border__;
+  font-size: 90%;
+  border: 1px solid __medium__;
   color: __text__;
+  background: url(images/buttonshadow.png) repeat-x;
   background-color: __background__;
   vertical-align: middle;
   margin: 1px;
@@ -111,10 +112,15 @@ div.dokuwiki select.edit {
   display: inline;
 }
 
+div.dokuwiki input.edit:focus, div.dokuwiki select.edit:focus {
+  background-color: __lighter__;
+  border: 1px solid __dark__;
+}
+
 /* nice alphatransparency background except for IE <7 */
 html>body div.dokuwiki input.edit,
 html>body div.dokuwiki select.edit {
-  background:  __background__ url(images/inputshadow.png) repeat-x top;
+  background:  __background__ url(images/buttonshadow.png) repeat-x top;
 }
 
 div.dokuwiki select.edit {
@@ -187,15 +193,27 @@ div.dokuwiki form#dw__editform div.license {
 
 div.dokuwiki input.button,
 div.dokuwiki button.button {
-  border: 1px solid __border__;
-  color: __text__;
+  border: 1px solid __medium__;
+  color: __dark__;
   background-color: __background__;
+  background: url(images/buttonshadow.png) repeat-x;
   vertical-align: middle;
   text-decoration: none;
-  font-size: 100%;
+  font-size: 90%;
+  font-weight: bold;
   cursor: pointer;
   margin: 1px;
   padding: 0.125em 0.4em;
+}
+
+div.dokuwiki input.button:hover, 
+div.dokuwiki input.button:focus,
+div.dokuwiki button.button:hover, 
+div.dokuwiki button.button:focus {
+  color: __dark__;
+  background-position: bottom;
+  background-color: __lighter__;
+  border: 1px solid __dark__;
 }
 
 /* nice alphatransparency background except for IE <7 */
@@ -210,8 +228,8 @@ html>body div.dokuwiki button.button {
 }
 
 div.dokuwiki div.secedit input.button {
-  border: 1px solid __border__;
-  color: __text__;
+  border: 1px solid __medium__;
+  color: __dark__;
   background-color: __background__;
   vertical-align: middle;
   text-decoration: none;
@@ -221,6 +239,12 @@ div.dokuwiki div.secedit input.button {
   cursor: pointer;
   float: right;
   display: inline;
+}
+
+div.dokuwiki div.secedit input.button:hover, 
+div.dokuwiki div.secedit input.button:focus {
+  background-color: __lighter__;
+  border: 1px solid __dark__;
 }
 
 /* ----------- page navigator ------------- */
@@ -334,7 +358,7 @@ div.dokuwiki div.preview {
 div.dokuwiki div.breadcrumbs {
   background-color: __background_neu__;
   color: __text_neu__;
-  font-size: 80%;
+  font-size: 11px;
   padding: 0 0 0 4px;
 }
 
@@ -399,10 +423,10 @@ div.dokuwiki h5 {
 
 /* special headlines */
 div.dokuwiki h1 {font-size: 160%; margin-left: 0px; font-weight: bold;}
-div.dokuwiki h2 {font-size: 150%; margin-left: 20px;}
-div.dokuwiki h3 {font-size: 140%; margin-left: 40px; border-bottom: none; font-weight: bold;}
-div.dokuwiki h4 {font-size: 120%; margin-left: 60px; border-bottom: none; font-weight: bold;}
-div.dokuwiki h5 {font-size: 100%; margin-left: 80px; border-bottom: none; font-weight: bold;}
+div.dokuwiki h2 {font-size: 150%; margin-left: 20px; font-weight: bold;}
+div.dokuwiki h3 {font-size: 140%; margin-left: 40px; font-weight: bold;}
+div.dokuwiki h4 {font-size: 120%; margin-left: 60px; font-weight: bold;}
+div.dokuwiki h5 {font-size: 100%; margin-left: 80px; font-weight: bold;}
 
 /* indent different sections */
 div.dokuwiki div.level1 { margin-left: 3px; }
@@ -546,23 +570,28 @@ div.dokuwiki div.toc {
   width: 200px;
   font-size: 80%;
   clear: both;
+  border: 1px solid __lighter__;
 }
 
 div.dokuwiki div.tocheader {
-  border: 1px solid __border__;
-  background-color: __background_alt__;
+  border: 0px solid __border__;
+  background: url(images/tocheader.gif) 0px 1px no-repeat;
+  background-position: right;
+  background-color: __white__;
   text-align: left;
   font-weight: bold;
   padding: 3px;
-  margin-bottom: 2px;
+  font-size: 11px;
+  color: __extern__;
 }
 
 div.dokuwiki span.toc_open,
 div.dokuwiki span.toc_close {
-    border: 0.4em solid __background_alt__;
     float: right;
     display: block;
-    margin: 0.4em 3px 0 0;
+    width: 20px;
+    height: 20px;
+    margin-top: -4px;
 }
 
 div.dokuwiki span.toc_open span,
@@ -571,33 +600,32 @@ div.dokuwiki span.toc_close span {
 }
 
 div.dokuwiki span.toc_open {
-    margin-top: 0.4em;
-    border-top: 0.4em solid __text__;
+    background: url(images/arrow_down.gif) 0px 0px no-repeat;
 }
 
 div.dokuwiki span.toc_close {
-    margin-top: 0;
-    border-bottom: 0.4em solid __text__;
+    background: url(images/arrow_up.gif) 0px 0px no-repeat;
 }
 
 div.dokuwiki #toc__inside {
-  border: 1px solid __border__;
-  background-color: __background__;
+  border: 0px solid __border__;
+  background-color: __light__;
   text-align: left;
   padding: 0.5em 0 0.7em 0;
+  font-size: 11px;
 }
 
 div.dokuwiki ul.toc {
   list-style-type: none;
   list-style-image: none;
-  line-height: 1.2em;
+  line-height: 1.5em;
   padding-left: 1em;
   margin: 0;
 }
 
 div.dokuwiki ul.toc li {
   background: transparent url(images/tocdot2.gif) 0 0.6em no-repeat;
-  padding-left: 0.4em;
+  padding-left: 0.6em;
 }
 
 div.dokuwiki ul.toc li.clear {
@@ -780,13 +808,19 @@ button.toolbutton {
   background-color: __background__;
   padding: 0px;
   margin: 0 1px 0 0;
-  border: 1px solid __border__;
+  border: 1px solid __medium__;
   cursor: pointer;
 }
 
 /* nice alphatransparency background except for IE <7 */
 html>body button.toolbutton {
   background:  __background__ url(images/buttonshadow.png) repeat-x bottom;
+}
+
+button.toolbutton:hover, 
+button.toolbutton:focus {
+  background-color: __lighter__;
+  border: 1px solid __dark__;
 }
 
 div.picker {
